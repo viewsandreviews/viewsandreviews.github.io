@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews Archive — Views & Reviews</title>
+<meta name="description" content="All film and TV reviews by Dr. Nabin Chowdhury.">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="./index.html" class="nav-logo">
+      <img src="./logo.svg" alt="Views & Reviews">
+    </a>
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./reviews.html">Reviews</a></li>
+      <li><a href="./now-watching.html">Now Watching</a></li>
+      <li><a href="./about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrap" style="padding-top: 56px; padding-bottom: 100px;">
+
+  <div style="margin-bottom: 40px;">
+    <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 44px); font-weight: 700; color: var(--white); margin-bottom: 8px;">All Reviews</h1>
+    <p style="color: var(--text-dim); font-family: 'Playfair Display', serif; font-style: italic;">Post #1 through present. Sorted newest first.</p>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="film">Film</button>
+    <button class="filter-btn" data-filter="tv">TV Series</button>
+    <button class="filter-btn" data-filter="horror">Horror</button>
+    <button class="filter-btn" data-filter="drama">Drama</button>
+    <button class="filter-btn" data-filter="sci-fi">Sci-Fi</button>
+    <button class="filter-btn" data-filter="superhero">Superhero</button>
+  </div>
+
+  <div class="archive-list">
+
+    <a href="./resident-evil.html" class="archive-item" data-tags="film horror sci-fi">
+      <span class="archive-num">#72</span>
+      <div>
+        <div class="archive-title">Resident Evil</div>
+        <div class="archive-meta">Film · Zach Cregger · 2026</div>
+      </div>
+      <div class="archive-scores">
+        <span class="mini-score">DS <strong>3</strong></span>
+        <span class="mini-score">LF <strong>8</strong></span>
+        <span class="mini-score">GP <strong>7</strong></span>
+      </div>
+    </a>
+
+    <a href="./the-drama.html" class="archive-item" data-tags="film drama">
+      <span class="archive-num">#71</span>
+      <div>
+        <div class="archive-title">The Drama</div>
+        <div class="archive-meta">Film · 2025</div>
+      </div>
+      <div class="archive-scores">
+        <span class="mini-score">DS <strong>2</strong></span>
+        <span class="mini-score">LF <strong>9</strong></span>
+        <span class="mini-score">GP <strong>9</strong></span>
+      </div>
+    </a>
+
+    <a href="./lanterns.html" class="archive-item" data-tags="tv superhero drama">
+      <span class="archive-num">#70</span>
+      <div>
+        <div class="archive-title">Lanterns</div>
+        <div class="archive-meta">TV Series · 2025</div>
+      </div>
+      <div class="archive-scores">
+        <span class="mini-score">DS <strong>3</strong></span>
+        <span class="mini-score">LF <strong>8</strong></span>
+        <span class="mini-score">GP <strong>7</strong></span>
+      </div>
+    </a>
+
+    <a href="./obsession.html" class="archive-item" data-tags="film horror">
+      <span class="archive-num">#69</span>
+      <div>
+        <div class="archive-title">Obsession</div>
+        <div class="archive-meta">Film · Zach Cregger · 2026</div>
+      </div>
+      <div class="archive-scores">
+        <span class="mini-score">DS <strong>1</strong></span>
+        <span class="mini-score">LF <strong>9</strong></span>
+        <span class="mini-score">GP <strong>10</strong></span>
+      </div>
+    </a>
+
+    <!-- Placeholder entries for older Wix posts — to be migrated -->
+    <div class="archive-item" style="opacity: 0.35; cursor: default;" data-tags="film">
+      <span class="archive-num">#1–68</span>
+      <div>
+        <div class="archive-title">Earlier Reviews</div>
+        <div class="archive-meta">Migration in progress — older posts from Wix coming soon</div>
+      </div>
+      <div class="archive-scores"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <span class="footer-brand">Views & Reviews · Dr. Nabin Chowdhury</span>
+  <ul class="footer-links">
+    <li><a href="./reviews.html">Reviews</a></li>
+    <li><a href="./now-watching.html">Now Watching</a></li>
+    <li><a href="./about.html">About</a></li>
+  </ul>
+</footer>
+
+<script src="./main.js"></script>
+</body>
+</html>
