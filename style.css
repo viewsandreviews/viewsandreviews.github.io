@@ -877,18 +877,44 @@ body {
   .score-def { grid-template-columns: 1fr; gap: 8px; }
 }
 
+/* ---------- Image standards (square, cropped to fit) ----------
+   Homepage featured: 320 x 320
+   Review page:       420 x 420, always centred
+   Archive list:       64 x 64
+   Images are cropped with object-fit: cover; use --focus on the
+   <img> (e.g. style="--focus: center 20%") to choose the crop point. */
+:root {
+  --img-featured: 320px;
+  --img-review:   420px;
+  --img-thumb:    64px;
+}
 
-/* ---------- Review images ---------- */
-.featured-poster img { object-position: center 30%; }
+.featured-card { grid-template-columns: var(--img-featured) 1fr; }
+.featured-poster {
+  width: var(--img-featured);
+  height: var(--img-featured);
+  min-height: 0;
+  align-self: center;
+}
+.featured-poster img,
+.review-image img,
+.archive-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--focus, center);
+  display: block;
+}
 
 .review-image {
+  width: 100%;
+  max-width: var(--img-review);
   margin: 0 auto 48px;
-  max-width: 380px;
+  text-align: center;
 }
 .review-image img {
-  width: 100%;
   height: auto;
-  display: block;
+  aspect-ratio: 1 / 1;
   border: 1px solid var(--border);
 }
 .review-image figcaption {
@@ -897,33 +923,21 @@ body {
   font-style: italic;
   font-size: 13px;
   color: var(--text-dim);
-  text-align: center;
 }
 
-.archive-item.has-thumb { grid-template-columns: 48px 1fr auto; }
+.archive-item.has-thumb { grid-template-columns: var(--img-thumb) 1fr auto; }
 .archive-thumb {
-  width: 48px;
-  height: 64px;
-  object-fit: cover;
-  object-position: center 30%;
-  display: block;
+  width: var(--img-thumb);
+  height: var(--img-thumb);
   border: 1px solid var(--border);
 }
-
-@media (max-width: 680px) {
-  .archive-item.has-thumb { grid-template-columns: 44px 1fr; }
-  .archive-thumb { width: 44px; height: 58px; }
-}
-
-.featured-card--portrait { grid-template-columns: minmax(0, 320px) 1fr; }
-.featured-card--portrait .featured-poster { min-height: 0; }
 
 /* Archive rows without a number or thumbnail: title takes the full width */
 .archive-item:not(.has-thumb):not(:has(.archive-num)) { grid-template-columns: 1fr auto; }
 
 @media (max-width: 680px) {
-  .featured-card--portrait { grid-template-columns: 1fr; }
-  .featured-card--portrait .featured-poster { max-height: 420px; }
-  .featured-card--portrait .featured-poster img { object-position: center 25%; }
+  .featured-card { grid-template-columns: 1fr; }
+  .featured-poster { width: 100%; max-width: var(--img-featured); height: auto; aspect-ratio: 1 / 1; margin: 0 auto; }
+  .archive-item.has-thumb { grid-template-columns: var(--img-thumb) 1fr; }
   .archive-item:not(.has-thumb):not(:has(.archive-num)) { grid-template-columns: 1fr; }
 }
