@@ -876,3 +876,54 @@ body {
   .review-grid { grid-template-columns: 1fr; }
   .score-def { grid-template-columns: 1fr; gap: 8px; }
 }
+
+
+/* ---------- Review images ---------- */
+.featured-poster img { object-position: center 30%; }
+
+.review-image {
+  margin: 0 auto 48px;
+  max-width: 380px;
+}
+.review-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--border);
+}
+.review-image figcaption {
+  margin-top: 10px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.archive-item.has-thumb { grid-template-columns: 48px 1fr auto; }
+.archive-thumb {
+  width: 48px;
+  height: 64px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 680px) {
+  .archive-item.has-thumb { grid-template-columns: 44px 1fr; }
+  .archive-thumb { width: 44px; height: 58px; }
+}
+
+.featured-card--portrait { grid-template-columns: minmax(0, 320px) 1fr; }
+.featured-card--portrait .featured-poster { min-height: 0; }
+
+/* Archive rows without a number or thumbnail: title takes the full width */
+.archive-item:not(.has-thumb):not(:has(.archive-num)) { grid-template-columns: 1fr auto; }
+
+@media (max-width: 680px) {
+  .featured-card--portrait { grid-template-columns: 1fr; }
+  .featured-card--portrait .featured-poster { max-height: 420px; }
+  .featured-card--portrait .featured-poster img { object-position: center 25%; }
+  .archive-item:not(.has-thumb):not(:has(.archive-num)) { grid-template-columns: 1fr; }
+}
